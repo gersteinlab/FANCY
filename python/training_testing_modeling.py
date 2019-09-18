@@ -2,10 +2,10 @@ import numpy as np
 import os
 
 #preparing inputs
-gue=open('bias_depth_cov_tier_snv.txt','r')
-bgvex=open('braingvex.txt','r')
-acet=open('acet.txt','r')
-atac=open('humanfc.txt','r')
+gue=open('../data/bias_depth_cov_tier_snv.txt','r')
+bgvex=open('../data/braingvex.txt','r')
+acet=open('../data/acet.txt','r')
+atac=open('../data/humanfc.txt','r')
 
 stad=[]
 skew=[]
