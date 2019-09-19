@@ -1,11 +1,15 @@
 # FANCY
 Predicting privacy risk of functional genomics data
 
-NOTE data the results in the paper are obtained using the MATLAB version of the code.
-
+<b>NOTE 1: The results in the paper are obtained using the MATLAB version of the code.
+  
+NOTE 2: If you want to skip the training step and use the already trained model, for FANCY (both in matlab (.mat) and pyhton (.sav) format, go to http://homes.gersteinlab.org/people/gg487/FANCY/. For FANCY_low, go to python or matlab folder.</b>
+  
 * In the python folder, you can find three python scripts:
   
   The dependencies are pyGPs, which can be easily downloaded following: https://www.cse.wustl.edu/~m.neumann/pyGPs_doc/Install.html
+  
+ 
 
   (1) <b>training_testing_modeling.py</b> takes the feature files in the data folder and divides it into half for training and test. It will then train a Gaussian Process Learning regression model on the trainign data. It will then predict the outcome of the test features and report the R^2 score for the test data. Finally, it will export the model and save it as "<b>FANCY.sav</b>" The kernel parameters are obtained using the optimization in MATLAB, as optimizing it in Python took a long time.
 
@@ -37,4 +41,6 @@ NOTE data the results in the paper are obtained using the MATLAB version of the 
         
         Risk is  red 
         
-  * In the matlab folder, you can find 
+* In the matlab folder, you can find the following scripts:
+
+   (1)
