@@ -51,26 +51,31 @@ NOTE 2: If you want to skip the training step and use the already trained model,
    
    (2) <b> fancy.m </b> is the prediction model function. Below is an example on how to run with an explanation
    
-   <code> >> load('FANCY.mat')
->> X=[300.96 103.01 12491.18 4.04985000000000 72274436 0 1 0];
->> [ypred rare1 rare2 alert]= fancy(X)
+   <code> >> load('FANCY.mat') <\code>
+   <code> >> X=[300.96 103.01 12491.18 4.04985000000000 72274436 0 1 0]; <\code>
+   <code> >> [ypred rare1 rare2 alert]= fancy(X) <\code>
+     
+     In the input X, the first column is the standard deviation, second column is the skewness, third column is the kurtosis, fourth column is the mean depth, sixth column is the coverage and sevent, eight and nineth columns are the one-hot encoding of the assay type. RNA-Seq = [0 0 1], ATAC-Seq=[0 1 0] and CHIP-Seq=[0 0 1]
+     
+     The correct answer for these inputs are 59,278 leaking SNVs and you should obtain a result similar to
 
-ypred =
+      ypred = 5.2579e+04
+      rare1 = 9.9900e+03
+      rare2 = 1.2093e+04
+      alert = 'red'
+      
+   (3) <b> fancy_low.m </b> is the prediction model function for the number of SNVs smaller or equal to 1000. Below is an example on how to run:
+   
+   <code> >> load('FANCY_low.mat') <\code>
+   <code> >> X=[0.0582118199131000,9.30898835798000,170.476230689000,1.28473000000000,1879796,0,1,0]; <\code>
+   <code> >> [ypred rare1 rare2 alert]= fancy_low(X) <\code>
+     
+     In the input X, the first column is the standard deviation, second column is the skewness, third column is the kurtosis, fourth column is the mean depth, sixth column is the coverage and sevent, eight and nineth columns are the one-hot encoding of the assay type. RNA-Seq = [0 0 1], ATAC-Seq=[0 1 0] and CHIP-Seq=[0 0 1]
+     
+     The correct answer for these inputs are 134 leaking SNVs and you should obtain a result similar to
 
-   5.2579e+04
-
-
-rare1 =
-
-   9.9900e+03
-
-
-rare2 =
-
-   1.2093e+04
-
-
-alert =
-
-    'red'
-    <\code>
+      ypred = 138.5298
+      rare1 = 26.3204
+      rare2 = 31.8618
+      alert = 'yellow'
+  
