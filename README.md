@@ -43,9 +43,6 @@ NOTE 2: If you want to skip the training step and use the already trained model,
         
 * In the matlab folder, you can find the following scripts:
 
-   (1) trainRegressionModel.m
-   (2) fancy.m
-   (3) fancy_low.m
    
    (1) <b>trainRegressionModel.m</b> takes the feature files in the data folder and divides it into half for training and test. It will then train a Gaussian Process Learning regression model on the training data. It will then predict the outcome of the test features and report the R^2 score for the test data. Finally, you can export the model and save it as "<b>FANCY.mat</b>" The kernel parameters are obtained using the Statistics and Machine Learning toolbox in MATLAB. You can also train the regressor by using only the data points that are smaller or equalt to 1000 and save the resulting model as "<b>FANCY_low.mat</b>".
    
@@ -83,3 +80,9 @@ NOTE 2: If you want to skip the training step and use the already trained model,
       rare2 = 31.8618
       alert = 'yellow'
   
+   (4) <b>trainingANDtest_for_classifier.m</b> uses the sequencing statistics (mean depth, coverage, standard deviation, skewness and kurtosis) as inputs and predicts the assay type using a Random Forest Classifier. It first takes the data and divides it into half for test and training. When you run the code, you should obtain something similar to below:
+   
+       validationAccuracy = 0.9682
+       testAccuracy = 0.9679
+       
+     validationAccuracy is the accuracy on the training data after 5-fold cross-validation and testAccuracy is the accuracy on the test data.
