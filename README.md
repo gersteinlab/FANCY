@@ -49,4 +49,28 @@ NOTE 2: If you want to skip the training step and use the already trained model,
    
    (1) <b>trainRegressionModel.m</b> takes the feature files in the data folder and divides it into half for training and test. It will then train a Gaussian Process Learning regression model on the training data. It will then predict the outcome of the test features and report the R^2 score for the test data. Finally, you can export the model and save it as "<b>FANCY.mat</b>" The kernel parameters are obtained using the Statistics and Machine Learning toolbox in MATLAB. You can also train the regressor by using only the data points that are smaller or equalt to 1000 and save the resulting model as "<b>FANCY_low.mat</b>".
    
-   (2) <b> fancy.m </b>
+   (2) <b> fancy.m </b> is the prediction model function. Below is an example on how to run with an explanation
+   
+   <code> >> load('FANCY.mat')
+>> X=[300.96 103.01 12491.18 4.04985000000000 72274436 0 1 0];
+>> [ypred rare1 rare2 alert]= fancy(X)
+
+ypred =
+
+   5.2579e+04
+
+
+rare1 =
+
+   9.9900e+03
+
+
+rare2 =
+
+   1.2093e+04
+
+
+alert =
+
+    'red'
+    <\code>
