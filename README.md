@@ -1,5 +1,6 @@
 # FANCY
 Predicting privacy risk of functional genomics data
+Pre-print: https://www.biorxiv.org/content/10.1101/775338v1
 
 <b>NOTE 1: The results in the paper are obtained using the MATLAB version of the code.
   
