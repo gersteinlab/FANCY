@@ -55,7 +55,7 @@ NOTE 2: If you want to skip the training step and use the already trained model,
    
    <code> >> [ypred rare1 rare2 alert]= fancy(X) </code>
      
-     In the input X, the first column is the standard deviation, second column is the skewness, third column is the kurtosis, fourth column is the mean depth, sixth column is the coverage and sevent, eight and nineth columns are the one-hot encoding of the assay type. RNA-Seq = [0 0 1], ATAC-Seq=[0 1 0] and CHIP-Seq=[0 0 1]
+     In the input X, the first column is the standard deviation, second column is the skewness, third column is the kurtosis, fourth column is the mean depth, sixth column is the coverage and sevent, eight and nineth columns are the one-hot encoding of the assay type. RNA-Seq = [0 0 1], ATAC-Seq=[0 1 0] and CHIP-Seq=[1 0 0]
      
      The correct answer for these inputs are 59,278 leaking SNVs and you should obtain a result similar to
 
